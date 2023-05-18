@@ -1,0 +1,23 @@
+span {
+  font-size: 25px;
+  color: red;
+}
+button {
+  margin: 10px;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.click{
+  font-size: medium;
+  color: blue;
+  cursor: pointer;
+}
+.app-container {
+  display: flex;
+  justify-content: space-evenly;
+}
