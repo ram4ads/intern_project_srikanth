@@ -35,6 +35,10 @@ const formDetailsSchema = new mongoose.Schema({
     userSignature: {
         type: String, // Change the type to store the file path or URL
         required: true
+    },
+    userCapturedImge : {
+        type: String,
+        required:true
     }
 });
 

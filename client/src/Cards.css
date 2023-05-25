@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+.My-card-container {
+    display: flex;
+    padding: 10px;
+    flex-direction: row; /* colum*/
+    flex-wrap: wrap;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+  }
+  .all-card-containers {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 3px;
+    height: 100px;
+    width: 200px;
+  }
+  span {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .sign-photo-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .photo-contaienr {
+    margin: 10px;
+  }
+  .sign-container {
+    margin: 10px;
+  }
+  p {
+    font-size: 15px;
+  }
+  .my-details-heading {
+    margin: 0px;
+  }
+  .my-details-heading {
+    text-align: center;
+    margin: 10px;
+  }

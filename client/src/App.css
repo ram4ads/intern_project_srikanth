@@ -9,17 +9,15 @@ input {
 }
 .button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
  
 /* Style App.js wrapper */
 .App {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
  
 /* Tab Container */
@@ -39,7 +37,7 @@ input {
 }
  
 .react-tabs__tab-list {
-  width: 70%;
+  width: 80%;
   margin: 0 auto 2rem;
   display: flex;
   align-items: center;
@@ -100,8 +98,8 @@ p {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
   justify-content: center;
   align-items: center;
 }
@@ -112,4 +110,10 @@ p {
 }
 h3 {
   text-align: center  ;
+}
+.clear-sign {
+  margin: 10px;
+}
+.recaptcha-btn {
+  margin: 10px;
 }

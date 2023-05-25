@@ -1,0 +1,25 @@
+.All-card-details-containers {
+    border: 1px solid rgb(240, 240, 240);
+    padding: 10px;
+    margin: 10px;
+}
+
+.All-cards {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    width: 50%;
+    margin-top: 30px;
+    border: 2px solid black;
+}
+span {
+    font-size: 15px;
+    font-weight: bold;
+}
+.right-side {
+    width: 50%;
+    background-color: rgb(135, 173, 136);
+    margin: 30px;
+    color: #ffffffff;
+    overflow: scroll;
+}

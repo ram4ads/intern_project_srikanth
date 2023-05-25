@@ -1,6 +1,7 @@
 import SignatureCanvas from 'react-signature-canvas';
 import React, { useContext } from "react";
 import { DataContext } from "./App";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Tab3 = () => {
   const { changeHandler, signatureRef, formSubmissionHandler } = useContext(DataContext);
@@ -20,6 +21,12 @@ const Tab3 = () => {
     formSubmissionHandler(e);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle your form submission here
+    // captch submission
+  };
+
   return (
     <div>
       <p>Signature</p>
@@ -29,9 +36,23 @@ const Tab3 = () => {
         ref={signatureRef}
         canvasProps={{ width: 500, height: 200 }}
       />
-      <button onClick={handleClearSignature}>
+      <button onClick={handleClearSignature} className='clear-sign'>
         Clear Signature
       </button>
+
+      {/* Captcha code */}
+      <form onSubmit={handleSubmit}>
+        <center>
+        {/* Your form fields here */}
+        <ReCAPTCHA
+          sitekey="6LePoR8mAAAAAEQKMs4hWduOx0NE5_dGvp-OvfjN"
+          onChange={(response) => console.log(response)}
+        />
+        </center>
+      </form>
+       {/* upto here  
+       */}
+
       <div className="button-container">
         <button type="submit" onClick={handleFormSubmission}>
           Submit

@@ -1,19 +1,22 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import React, { useState, createContext, useRef } from "react";
-import Tab1 from "./Tab1";
-import Tab2 from "./Tab2";
-import Tab3 from "./Tab3";
-import Tab4 from "./Tab4";
-import Tab5 from "./Tab5";
+import RegistrationForm from "./RegistrationForm";
+import FileUpload from "./FileUpload";
+import ImageCapture from "./ImageCapture";
+import Signature from "./Signature";
 
+// import Tab5 from "./Tab5";
+// import Login from "./Cards"
 import axios from "axios";
 import "./App.css";
 import Cards from "./Cards";
+// import AllUsersCard from "./AllUsersCard";
 
 export const DataContext = createContext();
 
 const App = () => {
   const signatureRef = useRef();
+  const [userDetailsCard, setUserDetailsCard] = useState([])
   const [data, setData] = useState({
     userFirstName: "",
     userLastName: "",
@@ -23,7 +26,8 @@ const App = () => {
     userPassword: "",
     userConfirmPassco: "",
     userPhoto: null,
-    userSignature: null
+    userSignature: null,
+    userCapturedImge: null,
   });
 
   const changeHandler = (e) => {
@@ -37,11 +41,11 @@ const App = () => {
   const formSubmissionHandler = (e) => {
     e.preventDefault();
     console.log(data);
-    // Perform additional form submission logic, such as sending data to a server
     axios
       .post("http://localhost:5000/register", data)
       .then(res => {
         alert(res.data);
+        setUserDetailsCard(data);
       });
   };
 
@@ -50,30 +54,35 @@ const App = () => {
       <DataContext.Provider value={{ data, changeHandler, signatureRef, formSubmissionHandler }}>
         <Tabs className="Tabs">
           <TabList>
-            <Tab>Tab 1</Tab>
-            <Tab>Tab 2</Tab>
-            <Tab>Tab 3</Tab>
-            <Tab>Tab 4</Tab>
-            <Tab>Tab 5</Tab>
+            <Tab>Registration Form</Tab>
+            <Tab>File Upload</Tab>
+            <Tab>Image Capture</Tab>
+            <Tab>Signature</Tab>
+            {/* <Tab>Captcha</Tab> */}
+            <Tab>Card</Tab>
           </TabList>
           <TabPanel>
-            <Tab1 />
+            <RegistrationForm />
           </TabPanel>
           <TabPanel>
-            <Tab2 />
+            <FileUpload />
           </TabPanel>
           <TabPanel>
-            <Tab3 />
+            <ImageCapture />
           </TabPanel>
           <TabPanel>
-            <Tab4 />
+            <Signature />
           </TabPanel>
-          <TabPanel>
+          {/* <TabPanel>
             <Tab5 />
+          </TabPanel> */}
+          <TabPanel>
+            <Cards userDetails={userDetailsCard}/>
           </TabPanel>
         </Tabs>
-      </DataContext.Provider>
-      {/* <Cards /> */}
+      </DataContext.Provider> 
+      <Cards userDetails={userDetailsCard}/>
+      {/* <AllUsersCard /> */}
     </div>
   );
 };
