@@ -8,7 +8,7 @@
 .My-card-container {
     display: flex;
     padding: 10px;
-    flex-direction: row; /* colum*/
+    flex-direction: column; /* colum*/
     flex-wrap: wrap;
     border: 2px solid black;
     justify-content: center;

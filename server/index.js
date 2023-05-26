@@ -4,7 +4,7 @@ const FormDetails = require("./model");
 const cors = require("cors")
 
 const app = express()
-app.use(express.json({ limit: '0mb' }));
+app.use(express.json({ limit: '20mb' }));
 app.use(cors({ origin: "*" }))
 
 mongoose.connect("mongodb+srv://srikanth:srikanth@cluster0.jsmfma8.mongodb.net/?retryWrites=true&w=majority").then(() =>

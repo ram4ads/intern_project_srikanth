@@ -10,7 +10,7 @@ import Signature from "./Signature";
 import axios from "axios";
 import "./App.css";
 import Cards from "./Cards";
-// import AllUsersCard from "./AllUsersCard";
+import CardTemplate from "./CaradTemplate";
 
 export const DataContext = createContext();
 
@@ -51,14 +51,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <DataContext.Provider value={{ data, changeHandler, signatureRef, formSubmissionHandler }}>
+      {/* <DataContext.Provider value={{ data, changeHandler, signatureRef, formSubmissionHandler }}>
         <Tabs className="Tabs">
           <TabList>
             <Tab>Registration Form</Tab>
             <Tab>File Upload</Tab>
             <Tab>Image Capture</Tab>
             <Tab>Signature</Tab>
-            {/* <Tab>Captcha</Tab> */}
             <Tab>Card</Tab>
           </TabList>
           <TabPanel>
@@ -73,16 +72,14 @@ const App = () => {
           <TabPanel>
             <Signature />
           </TabPanel>
-          {/* <TabPanel>
-            <Tab5 />
-          </TabPanel> */}
           <TabPanel>
             <Cards userDetails={userDetailsCard}/>
           </TabPanel>
         </Tabs>
-      </DataContext.Provider> 
-      <Cards userDetails={userDetailsCard}/>
-      {/* <AllUsersCard /> */}
+      </DataContext.Provider>  */}
+      {/* <Cards userDetails={userDetailsCard}/> */}
+      {/* <Cards /> */}
+      <CardTemplate />
     </div>
   );
 };
