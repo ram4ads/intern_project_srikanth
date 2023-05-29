@@ -1,0 +1,29 @@
+.image-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+}
+.images{
+  height: 180px;
+  width: 180px;
+  margin: 5px;
+}
+button {
+  margin: 3px;
+  margin-bottom: 10px;
+}
+.icons {
+  align-items: center;
+}
+.image-input-button-container{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 5px;
+}
+.infinity-box-container {
+  border: 2px sloid black;
+  margin: 5px;
+}
